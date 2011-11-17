@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title Evode
+    = stylesheet_link_tag    "http://twitter.github.com/bootstrap/1.4.0/bootstrap.css"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .topbar
+      .fill
+        .container
+          %a.brand{:href => "#"} evode
+          %form.pull-right{:action => ""}
+            %input.input-small{:placeholder => "Username", :type => "text"}/
+            %input.input-small{:placeholder => "Password", :type => "password"}/
+            %button.btn{:type => "submit"} Sign in
+    .container
+      .content
+        .page-header
+          %h1
+            evode
+            %small Watch an app grow in front of your eyes
+        = yield
+      %footer
+        %p
+          &copy; Pablo Fernandez
+          = Time.now.year
